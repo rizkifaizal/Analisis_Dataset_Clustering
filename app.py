@@ -6,7 +6,7 @@ import scipy.cluster.hierarchy as sch
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set page configuration
+# Set page configuratio
 st.set_page_config(page_title="📊 Analisis Dataset Clustering", layout="wide")
 
 # Sidebar for navigation
