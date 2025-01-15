@@ -22,59 +22,53 @@ if page == "🏠 About":
     st.title("📊 Tentang Aplikasi")
     
     st.markdown("""
-    Aplikasi ini dirancang untuk **menganalisis dataset clustering** yang berisi informasi demografis individu.
-    
-    ### 📋 Deskripsi Dataset
-    Dataset ini mencakup berbagai atribut demografis individu yang dapat digunakan untuk analisis lebih lanjut dalam:
-    - Pemasaran
-    - Penelitian sosial
-    - Pengembangan produk
+    ### 🔍 Tentang Aplikasi
+    Aplikasi ini dirancang untuk **menganalisis dataset clustering** yang mencakup berbagai atribut demografis individu. 
+    Aplikasi ini memanfaatkan algoritma clustering, khususnya **Hierarchical Agglomerative Clustering**, untuk membantu memahami pola dan pengelompokan dalam data.
 
-    ### 📊 Kolom dalam Dataset
-    - **ID**: Identifikasi unik untuk setiap entri.
+    ### 📋 Deskripsi Dataset
+    Dataset ini berisi informasi demografis seperti:
+    - **ID**: Identifikasi unik untuk setiap individu.
     - **Sex**: Jenis kelamin (0 = Perempuan, 1 = Laki-laki).
     - **Marital Status**: Status pernikahan (0 = Belum Menikah, 1 = Menikah).
     - **Age**: Usia individu.
     - **Education**: Tingkat pendidikan (0 = Tidak berpendidikan, 1 = SD, 2 = SMP).
-    - **Income**: Pendapatan tahunan individu.
-    - **Occupation**: Kode untuk jenis pekerjaan.
+    - **Income**: Pendapatan tahunan.
+    - **Occupation**: Jenis pekerjaan.
     - **Settlement Size**: Ukuran pemukiman (0 = Kecil, 1 = Sedang, 2 = Besar).
 
-    ### 🔍 Fitur Utama
-    - **Filter Data**: Berdasarkan jenis kelamin, status pernikahan, usia, dan pendidikan.
-    - **Tampilkan Data**: Data yang difilter dalam bentuk tabel.
-    - **Statistik Deskriptif**: Ringkasan data untuk analisis cepat.
-    - **Visualisasi**: Distribusi pendapatan dan usia menggunakan grafik histogram.
-    - **Ekspor Data**: Simpan data yang telah difilter ke dalam file CSV.
+    ### 📊 Apa itu Hierarchical Agglomerative Clustering?
+    **Hierarchical Agglomerative Clustering (HAC)** adalah algoritma clustering yang bekerja dengan pendekatan **bottom-up**:
+    - Setiap individu dimulai sebagai cluster tunggal.
+    - Cluster ini digabungkan secara berulang berdasarkan kesamaan hingga semua data berada dalam satu cluster besar.
+    - Hasilnya divisualisasikan dalam bentuk **dendrogram**, yang menunjukkan hubungan antar individu atau kelompok.
 
-    ### 🎯 Tujuan Aplikasi
-    Memberikan wawasan yang lebih dalam tentang data demografis dan membantu dalam pengambilan keputusan berbasis data.
+    #### 🚀 Keunggulan HAC
+    - **Tanpa Penentuan Jumlah Cluster Awal**: Tidak memerlukan jumlah cluster yang ditentukan sebelumnya.
+    - **Analisis Visual dengan Dendrogram**: Memberikan wawasan mendalam tentang struktur data.
+    - **Fleksibilitas dalam Metode Penggabungan**: Seperti metode ward, average, complete, atau single linkage.
 
-    ### 🛠️ Penggunaan
-    Silakan pilih filter di sidebar untuk menganalisis data sesuai kebutuhan Anda.
+    ### 🎯 Tujuan Analisis
+    Dengan memanfaatkan HAC, aplikasi ini bertujuan:
+    - Mengidentifikasi pola dan hubungan dalam data demografis.
+    - Membantu dalam pengelompokan individu berdasarkan atribut seperti usia, pendapatan, pendidikan, dan pekerjaan.
+    - Memberikan wawasan yang relevan untuk pengambilan keputusan di berbagai bidang, seperti pemasaran, penelitian sosial, dan pengembangan produk.
 
-    ### 📊 Jenis-Jenis Hierarchical Clustering
-    Terdapat dua jenis utama dari hierarchical clustering:
-    
-    1. **Agglomerative Clustering**: 
-       - Dikenal sebagai pendekatan bottom-up. 
-       - Setiap data dianggap sebagai cluster tunggal pada awalnya, dan kemudian secara bertahap menggabungkan pasangan cluster hingga semua cluster digabungkan menjadi satu cluster yang berisi semua data.
-       - Algoritma ini tidak memerlukan penentuan jumlah cluster sebelumnya.
+    ### 🛠️ Fitur Utama
+    - **Filter Data**: Berdasarkan jenis kelamin, usia, status pernikahan, dan tingkat pendidikan.
+    - **Visualisasi Data**: 
+      - Distribusi pendapatan dan usia.
+      - Visualisasi dendrogram untuk melihat hasil clustering.
+    - **Evaluasi Model**: Menghitung nilai **Silhouette Score** untuk mengukur kualitas clustering.
+    - **Ekspor Data**: Simpan data yang telah difilter dan diberi label cluster dalam format CSV.
 
-    2. **Divisive Clustering**: 
-       - Dikenal sebagai pendekatan top-down. 
-       - Memulai dengan satu cluster yang berisi seluruh data dan kemudian membagi cluster tersebut secara rekursif hingga setiap data terpisah menjadi cluster tunggal.
-       - Juga tidak memerlukan penentuan jumlah cluster sebelumnya.
+    ### 🌳 Mengapa Hierarchical Clustering?
+    Hierarchical clustering cocok digunakan saat:
+    - Anda ingin memahami struktur data yang mendalam.
+    - Analisis visual dan eksplorasi data adalah prioritas.
+    - Tidak ada informasi awal mengenai jumlah cluster yang diinginkan.
 
-    ### ⚖️ Perbandingan Agglomerative dan Divisive Clustering
-    - **Kompleksitas**: 
-      - Divisive clustering lebih kompleks dibandingkan dengan agglomerative clustering.
-      - Agglomerative clustering memiliki kompleksitas waktu O(n³) dalam kasus naive, tetapi dapat dioptimalkan menjadi O(n²) dengan menggunakan struktur data priority queue.
-      - Divisive clustering lebih efisien jika tidak menghasilkan hierarki lengkap hingga data individu.
-
-    - **Akurasi**: 
-      - Algoritma divisive lebih akurat karena mempertimbangkan distribusi global data saat membuat keputusan pemisahan.
-      - Agglomerative clustering membuat keputusan berdasarkan pola lokal tanpa mempertimbangkan distribusi global data, sehingga keputusan awal tidak dapat dibatalkan.
+    Kami berharap aplikasi ini dapat membantu Anda memahami data secara lebih baik dan memanfaatkan hasil analisis untuk tujuan strategis.
     """)
 
 
